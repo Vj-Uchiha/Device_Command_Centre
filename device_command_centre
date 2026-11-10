@@ -1,0 +1,68 @@
+from abc import ABC, abstractmethod
+
+class SmartDevice(ABC):
+    def show_device(self, device_name):
+        print("\nDevice:", device_name)
+
+   
+    @abstractmethod
+    def turn_on(self):
+        pass
+
+
+class SmartLight(SmartDevice):
+    def turn_on(self):
+        print("The smart light is glowing!")
+
+
+class SmartFan(SmartDevice):
+    def turn_on(self):
+        print("The smart fan is spinning!")
+
+
+class SmartSpeaker(SmartDevice):
+    def turn_on(self):
+        print("The smart speaker is playing music!")
+
+
+class SmartTV(SmartDevice):
+    def turn_on(self):
+        print("The smart TV is starting!")
+
+my_light = SmartLight()
+my_fan = SmartFan()
+my_speaker = SmartSpeaker()
+my_tv = SmartTV()
+
+my_light.show_device("Kitchen Light")
+my_light.turn_on()
+
+my_fan.show_device("Ceiling Fan")
+my_fan.turn_on()
+
+my_speaker.show_device("Bluetooth Speaker")
+my_speaker.turn_on()
+
+my_tv.show_device("Living Room TV")
+my_tv.turn_on()
+
+
+class SecurityCamera:
+    def check_status(self):
+        print("Camera is watching the surroundings.")
+
+
+class DoorLock:
+    def check_status(self):
+        print("Door is safely locked.")
+
+camera = SecurityCamera()
+lock = DoorLock()
+
+security_devices = [camera, lock]
+print("\n===== SECURITY DEVICE CHECK =====")
+
+for item in security_devices:
+    item.check_status()
+
+print("=================================")
